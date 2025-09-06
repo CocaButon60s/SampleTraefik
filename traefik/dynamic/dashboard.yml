@@ -1,0 +1,16 @@
+http:
+  routers:
+    traefik-dashboard:
+      entryPoints:
+        - websecure
+      rule: PathPrefix(`/`)
+      service: api@internal
+      tls: true
+      middlewares:
+        - dashboard-auth
+
+  middlewares:
+    dashboard-auth:
+      basicAuth:
+        users:
+          - "admin:$apr1$MaeYjR7O$4bfx.cHPzQH1fUY3Giaak."
