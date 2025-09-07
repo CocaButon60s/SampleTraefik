@@ -7,6 +7,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "50000:50000"
     restart: always
     volumes:
       - ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro
